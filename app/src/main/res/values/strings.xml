@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AdMob Test</string>
+
+    <string name="admob_app_id">Your AdMob App Id</string>
+</resources>
