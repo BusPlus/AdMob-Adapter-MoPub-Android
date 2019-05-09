@@ -8,4 +8,6 @@ Adapter that fixed AdMob with MoPub impr. &amp; click zero issue
 
 **Step 3.** Set your [Test Device Id](https://github.com/BusPlus/AdMob-Adapter-MoPub-Android/blob/master/app/src/main/java/com/mopub/nativeads/GooglePlayServicesNative.java#L453) to request ads in debug mode.
 
-**Step 4.** When you see ad show in test app, and `onAdImpression` show in `Logcat`. You've succeeded! Enjoy it!
+**Step 4.** Run `app`
+
+**Step 5.** When you see ad show in test app, and `onAdImpression` show in `Logcat`. You've succeeded! Enjoy it!
