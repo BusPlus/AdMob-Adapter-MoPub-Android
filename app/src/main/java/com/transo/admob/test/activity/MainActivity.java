@@ -143,8 +143,7 @@ public class MainActivity extends AppCompatActivity {
                         .inflate(R.layout.item_test, parent, false);
                 return new ViewHolder(view);
             } else {
-                view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.item_ad, parent, false);
+                view = mNativeAd.createAdView(parent.getContext(), parent);
                 return new AdViewHolder(view);
             }
         }
