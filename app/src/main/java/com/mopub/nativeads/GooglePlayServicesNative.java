@@ -339,13 +339,6 @@ public class GooglePlayServicesNative extends CustomEventNative {
 
             NativeAdOptions.Builder optionsBuilder = new NativeAdOptions.Builder();
 
-            // MoPub requires the images to be pre-cached using their APIs, so we do not want
-            // Google to download the image assets.
-            optionsBuilder.setReturnUrlsForImageAssets(true);
-
-            // MoPub allows for only one image, so only request for one image.
-            optionsBuilder.setRequestMultipleImages(false);
-
             // Get the preferred image orientation from the local extras.
             if (localExtras.containsKey(KEY_EXTRA_ORIENTATION_PREFERENCE) &&
                     isValidOrientationExtra(localExtras.get(KEY_EXTRA_ORIENTATION_PREFERENCE))) {
@@ -547,7 +540,7 @@ public class GooglePlayServicesNative extends CustomEventNative {
 
         /**
          * This method will check whether or not the given ad has all the required assets
-         * (title, text, main image url, icon url and call to action) for it to be correctly
+         * (title, text and call to action) for it to be correctly
          * mapped to a {@link GooglePlayServicesNativeAd}.
          *
          * @param unifiedNativeAd to be checked if it is valid.
@@ -557,8 +550,6 @@ public class GooglePlayServicesNative extends CustomEventNative {
 
         private boolean isValidUnifiedAd(UnifiedNativeAd unifiedNativeAd) {
             return (unifiedNativeAd.getHeadline() != null && unifiedNativeAd.getBody() != null &&
-                    unifiedNativeAd.getImages() != null && unifiedNativeAd.getImages().size() > 0 &&
-                    unifiedNativeAd.getImages().get(0) != null &&
                     unifiedNativeAd.getCallToAction() != null);
         }
 
